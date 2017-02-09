@@ -10,7 +10,7 @@ $(document).ready(function(){
     			var $tr = $('<tr/>', {class: 'table-row', id: 'table-row-id-'+index});
     			for (var j = 1; j<=columns; j++) {
     				//spaces+="<td>Dynamic Space</td>";
-                    $tr.append($('<td />', {class: 'name', id: 'space-'+index, text: 'Space'+index}));
+                    $tr.append($('<td />', {class: 'name', id: 'Space'+index, text: 'Space'+index}));
                     
                      index++;
     			}
@@ -19,11 +19,25 @@ $(document).ready(function(){
     		}
  			//$('#parkingTable').append(spaces);
             container.append($trs);
-
-            
+            var totalSpaces=index-1;
+            $('#spacesCountId').html(totalSpaces);
+            $('#availableSpacesCountId').html(totalSpaces);
             
 		});
         $(document).on("click", "#parkingTable td", function(e) {
-            alert(this.id);
+           // alert(this.id);
+           var cellText = $(this).html();
+           console.log(cellText);
+           if(this.id!=cellText){
+                alert('Already occupied');
+           }else{
+                var vehicleNum=prompt('Enter text here');
+                $('#'+this.id).html(vehicleNum);
+                var occupiedSpaces=$('#occupiedSpacesCountId').html();
+                var totalSpaces=$('#spacesCountId').html();
+                $('#occupiedSpacesCountId').html(++occupiedSpaces);
+                $('#availableSpacesCountId').html((totalSpaces-occupiedSpaces));
+           }
+          
         });
        
