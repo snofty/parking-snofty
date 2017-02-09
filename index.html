@@ -1,18 +1,37 @@
+<!DOCTYPE html>
 <html>
-  <head><title>Parking Snofty</title>
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Parking Snofty</title>
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <style>
-    	td{
-    		background-color:white;
+    	.parking-roadClass{
+    		background-color:#948884;
+    		width: 450px;
+    		height: 170px;
+    		text-align: center;
     	}
-
+    	.parking-full{
+    		background-image: url(images/car-on-top.png);
+    	}
     </style>
     <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
+  	<dialog id="carParking" style="overflow-y: auto;width: 80%">
+  	<table width="100%">
+  	<tr>
+  	<td>
   	<table id="parkingTable" border="1" width="100%">
-  		<tbody class="table-body" id="table-body-id">
+  		<tbody class="table-body" id="table-body-id"></tbody>
   	</table>
+  	</td>
+  	</tr>
+  	</table>
+  	</dialog>
+  	<table>
+  	<tr>
+  	<td>
   	<table>
   	   <tr>
   	   	<td>Total Spaces</td>
@@ -27,5 +46,9 @@
   	   	<td><div id="availableSpacesCountId">0</div></td>
   	   </tr>
   	</table>
+  	</td>
+  	</tr>
+  	</table>
+  	<button id="show" onclick="$('#carParking').show();">Show Dialog</button> 
   </body>
 </html> 
