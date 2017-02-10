@@ -9,46 +9,85 @@
 </head>
 <body>
 	<div align="center" class="parkingClass">
-		<fieldset id="carParkingId" style="width: 150px;">
-		<legend>Car Parking</legend>
-			<table>
-				<tr>
-					<td>
-						<table>
-							<tr>
-								<td>Total Spaces</td>
-								<td><div id="spacesCountId">0</div></td>
-							</tr>
-							<tr>
-								<td>Occupied Spaces</td>
-								<td><div id="occupiedSpacesCountId">0</div></td>
-							</tr>
-							<tr>
-								<td>Available Spaces</td>
-								<td><div id="availableSpacesCountId">0</div></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-			<button id="show" onclick="$('#carParking').show();">Show Dialog</button> 
-		</fieldset>
-	</div>
-	<dialog id="carParking" style="overflow-y: auto;width: 80%">
-				<div align="right">
-					<a href="#" id="show" onclick="$('#carParking').hide();" >X</a> 
-				</div>
-				<div style="overflow: auto;height:400px;">
+		<table>
+			<tr><td>
+				<fieldset id="carParkingId" style="width: 200px;">
+					<legend>Car Parking</legend>
 					<table width="100%">
+
 						<tr>
-							<td>
-								<table id="parkingTable" border="1" width="100%">
-									<tbody class="table-body" id="table-body-id"></tbody>
-								</table>
-							</td>
+							<td>Total Spaces</td>
+							<td><div id="carSpacesCountId">0</div></td>
 						</tr>
+						<tr>
+							<td>Occupied Spaces</td>
+							<td><div id="carOccupiedSpacesCountId">0</div></td>
+						</tr>
+						<tr>
+							<td>Available Spaces</td>
+							<td><div id="carAvailableSpacesCountId">0</div></td>
+						</tr>
+						
 					</table>
-				</div>
-			</dialog>
+					<button id="carAllotmentshow" onclick="$('#carParking').fadeIn(2000);" class="buttonClass">Parking Allotment</button> 
+				</fieldset>
+			</td>
+			<td>
+				<fieldset id="bikeParkingId" style="width: 200px;">
+					<legend>Bike Parking</legend>
+					<table width="100%">
+
+						<tr>
+							<td>Total Spaces</td>
+							<td><div id="bikeSpacesCountId">0</div></td>
+						</tr>
+						<tr>
+							<td>Occupied Spaces</td>
+							<td><div id="bikeOccupiedSpacesCountId">0</div></td>
+						</tr>
+						<tr>
+							<td>Available Spaces</td>
+							<td><div id="bikeAvailableSpacesCountId">0</div></td>
+						</tr>
+						
+					</table>
+					<button id="bikeAllotmentshow" onclick="$('#bikeParking').fadeIn(2000);" class="buttonClass">Parking Allotment</button> 
+				</fieldset>
+			</td>
+		</tr>
+	</table>
+</div>
+<dialog id="carParking" style="overflow-y: auto;width: 80%">
+	<div align="right">
+		<a href="#" id="carParkingClose" onclick="$('#carParking').fadeOut(2000);">X</a> 
+	</div>
+	<div style="overflow: auto;height:400px;">
+		<table width="100%">
+			<tr>
+				<td>
+					<table id="carParkingTable" border="1" width="100%">
+						<tbody class="table-body" id="carTable-body-id"></tbody>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</dialog>
+<dialog id="bikeParking" style="overflow-y: auto;width: 80%">
+	<div align="right">
+		<a href="#" id="bikeParkingClose" onclick="$('#bikeParking').fadeOut(2000);" >X</a> 
+	</div>
+	<div style="overflow: auto;height:400px;">
+		<table width="100%">
+			<tr>
+				<td>
+					<table id="bikeParkingTable" border="1" width="100%">
+						<tbody class="table-body" id="bikeTable-body-id"></tbody>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</dialog>
 </body>
 </html> 

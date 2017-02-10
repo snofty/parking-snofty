@@ -1,20 +1,49 @@
-.parking-roadClass{
-			background-color:#948884;
-			width: 450px;
-			height: 170px;
-			text-align: center;
-		}
-		.parking-full{
-			background-image: url(../images/car-on-top.png);
-		}
-		.parkingClass{
-			position:fixed;
-			top: 50%;
-			left: 50%;
-			width:30em;
-			height:18em;
-			margin-top: -9em; /*set to a negative number 1/2 of your height*/
-			margin-left: -15em; /*set to a negative number 1/2 of your width*/
-			border: 1px solid #ccc;
-			background-color: #f3f3f3;
-		}
+html { 
+  background: url(../images/home-background-1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.carparking-roadClass{
+	background-color:#948884;
+	width: 450px;
+	height: 170px;
+	text-align: center;
+}
+
+.bikeparking-roadClass{
+	background-color:#948884;
+	height: 70px;
+	text-align: center;
+	color:yellow;
+}
+
+.carparking-full{
+	background-image: url(../images/car-on-top.png);
+}
+
+.bikeparking-full{
+	background-image: url(../images/bike.png);
+}
+
+.parkingClass{
+	position:fixed;
+	top: 70%;
+	left: 50%;
+	width:30em;
+	height:18em;
+	margin-top: -9em; /*set to a negative number 1/2 of your height*/
+	margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}
+.buttonClass{
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: blink;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+}
