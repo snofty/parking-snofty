@@ -5,7 +5,7 @@
 			text-align: center;
 		}
 		.parking-full{
-			background-image: url(images/car-on-top.png);
+			background-image: url(../images/car-on-top.png);
 		}
 		.parkingClass{
 			position:fixed;
