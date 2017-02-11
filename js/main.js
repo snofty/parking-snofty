@@ -43,9 +43,20 @@ function addOnclickEvent(vehicleType, thisRef){
     if(thisRef.id!=cellText){
         alert('Already occupied');
     }else{
-        var vehicleNum=prompt('Enter vehicle number');
-        $('#'+thisRef.id).html(vehicleNum);
-        $(thisRef).addClass(vehicleType+'parking-full');
+        $('#vehicleSpace').html(cellText);
+        $('#vehicleNumId').val('');
+        $('#vehicleNumId').focus();
+        $('#vehicleDetaildId').fadeIn(1000);
+    }
+}       
+
+function submitVehicleDetails(){
+    var vehicleNum=$('#vehicleNumId').val();
+    if(vehicleNum!=''){
+        var vehicleSpace=$('#vehicleSpace').html();
+        var vehicleType=vehicleSpace.toLowerCase().indexOf("bike") >= 0?"bike":'car';
+        $('#'+vehicleSpace).html(vehicleNum);
+         $('#'+vehicleSpace).addClass(vehicleType+'parking-full');
         var occupiedSpaces=$('#'+vehicleType+'OccupiedSpacesCountId').html();
         var totalSpaces=$('#'+vehicleType+'SpacesCountId').html();
         ++occupiedSpaces;
@@ -61,5 +72,10 @@ function addOnclickEvent(vehicleType, thisRef){
         }
         $('#'+vehicleType+'OccupiedSpacesCountId').html(occupiedSpaces);
         $('#'+vehicleType+'AvailableSpacesCountId').html(availableSpacesCount);
+
+        //close vehicle  details div
+        $('#vehicleDetaildId').fadeOut('slow');
     }
-}       
+    
+
+}

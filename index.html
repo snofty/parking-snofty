@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<div align="center" class="parkingClass">
+	<div id="parkingId" align="center" class="parkingClass">
 		<table>
 			<tr><td>
 				<fieldset id="carParkingId" style="width: 200px;">
@@ -29,6 +29,7 @@
 						</tr>
 						
 					</table>
+					<hr/>
 					<button id="carAllotmentshow" onclick="$('#carParking').fadeIn(2000);" class="buttonClass">Parking Allotment</button> 
 				</fieldset>
 			</td>
@@ -51,6 +52,7 @@
 						</tr>
 						
 					</table>
+					<hr/>
 					<button id="bikeAllotmentshow" onclick="$('#bikeParking').fadeIn(2000);" class="buttonClass">Parking Allotment</button> 
 				</fieldset>
 			</td>
@@ -89,5 +91,29 @@
 		</table>
 	</div>
 </dialog>
+<div id="vehicleDetaildId" style="display:none;" class="popup-content-box">
+	<table>
+		<tr>
+			<th>Space#:</th>
+			<td><p id="vehicleSpace"></p></td>
+		</tr>
+		<tr>
+			<th>Vehicle#:</th>
+			<td><input type="text" name="vehicleNum" id="vehicleNumId" style="width: 55px;" autofocus/></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="button" value="Submit" name="submitVehicleDetails" id="submitVehicleDetailsId" 
+			class="buttonClass" onclick="submitVehicleDetails();" />
+			</td>
+		</tr>
+	</table>
+</div>
 </body>
+<footer>
+<small style="color="red">&copy; Copyright 
+<script type="text/javascript">
+var d = new Date()
+document.write(d.getFullYear())
+</script> Snofty</small>
+</footer>
 </html> 
